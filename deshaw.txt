@@ -1,0 +1,7 @@
+The gem5 simulator, which has 737K lines of code: https://www.openhub.net/p/gem5
+
+I contributed to gem5 over two summers as an intern at Advanced Micro Devices. My contribution was a low percentage of the project owing to its scale. My contributions included changes to the Python files used to script the simulator, as well as the C++ components that make up the bulk of the codebase.
+
+gem5 is a platform for computer architecture research that makes it possible to run performance tests on theoretical combinations of hardware, using a variety of models that vary in complexity and accuracy. In particular, development of the simulator is headed by AMD, ARM, and the University of Wisconsin Madison.
+
+My work with the simulator was to speed up the rate at which simulations could be run with complex models, so that we could avoid falling back to simpler but less accurate models. To this end, I worked on parallelizing the simulator and refactoring the complex models so that they could be serialized to real hardware. Serializing to real hardware made it possible to, for example, run 5% of the execution of in benchmark inside of the simulator at randomly-chosen "sample points", but run the remaining 95% of the execution inside of the Linux KVM for a 10000x speedup
